@@ -13,6 +13,7 @@
                 <th>Descrição</th>
                 <th>Imagem</th>
                 <th>Publicado</th>
+                <th>Ação</th>
 
 
             </tr>
@@ -23,11 +24,13 @@
                 <td>{{$registro->id}}
                 <td>{{$registro->titulo}}
                 <td>{{$registro->descricao}}
-                <td><img width="120" src="{{assert($registro->imagem)}}" alt="{{$registro->titulo}}"/></td>
+                <td><img height="50" src="{{asset($registro->imagem)}}" alt="{{$registro->titulo}}"/></td>
                 <td>{{ $registro->publicado}}</td>
                 <td>
                     <a class="btn deep-blue" href="{{route('admin.cursos.editar', $registro->id)}}">Editar</a>
-                    <a class="btn red" href="{{route('admin.cursos.deletar', $registro->id)}}">Deletar</a>
+                    <a class="btn red" href="{{route('admin.cursos.deletar', $registro->id)}}"
+                        onclick="return confirm('Tem certeza que deseja deletar este registro ?')"">Deletar</a>
+
                 </td>
 
             </tr>

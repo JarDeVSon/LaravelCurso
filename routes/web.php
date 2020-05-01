@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 Route::get('/contato/{id?}', ['uses'=>'ContatoController@index']);
 Route::post('/contato/', ['uses'=>'ContatoController@criar']);
@@ -25,4 +25,4 @@ Route::get('/admin/cursos/adicionar', ['as'=> 'admin.cursos.adicionar', 'uses'=>
 Route::post('/admin/cursos/salvar', ['as'=> 'admin.cursos.salvar', 'uses'=> 'AdminCursoController@salvar']);
 Route::get('/admin/cursos/editar/{id}', ['as'=> 'admin.cursos.editar', 'uses'=> 'AdminCursoController@editar']);
 Route::put('/admin/cursos/atualizar/{id}', ['as'=> 'admin.cursos.atualizar', 'uses'=> 'AdminCursoController@atualizar']);
-Route::get('/admin/cursos/deletar/{id}', ['as'=> 'admin.cursos.deletar', 'uses'=> 'AdminCursoController@deletar ']);
+Route::get('/admin/cursos/deletar/{id}', ['as'=> 'admin.cursos.deletar', 'uses'=> 'AdminCursoController@deletar']);
